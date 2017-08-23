@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041473231F4E1C4300757B93 /* AuthClSrvInteg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414731F1F4E1C4300757B93 /* AuthClSrvInteg.swift */; };
+		041473241F4E1C4300757B93 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041473201F4E1C4300757B93 /* Authorization.swift */; };
+		041473251F4E1C4300757B93 /* ClSrvIntegBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041473211F4E1C4300757B93 /* ClSrvIntegBase.swift */; };
+		041473261F4E1C4300757B93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041473221F4E1C4300757B93 /* ViewController.swift */; };
+		0414732D1F4E1FBD00757B93 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414732B1F4E1FBD00757B93 /* KeychainItemAccessibility.swift */; };
+		0414732E1F4E1FBD00757B93 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414732C1F4E1FBD00757B93 /* KeychainWrapper.swift */; };
 		04D011DA1F408D1300892F65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D011D91F408D1300892F65 /* AppDelegate.swift */; };
-		04D011DC1F408D1300892F65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D011DB1F408D1300892F65 /* ViewController.swift */; };
 		04D011DF1F408D1300892F65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D011DD1F408D1300892F65 /* Main.storyboard */; };
 		04D011E11F408D1300892F65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D011E01F408D1300892F65 /* Assets.xcassets */; };
 		04D011E41F408D1300892F65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D011E21F408D1300892F65 /* LaunchScreen.storyboard */; };
@@ -16,7 +21,6 @@
 		04D0120E1F40916800892F65 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04D011F71F408EFE00892F65 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		04D0122B1F4092B200892F65 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D0121E1F40928B00892F65 /* SwiftyJSON.framework */; };
 		04D0122C1F4092B200892F65 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04D0121E1F40928B00892F65 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		04D012371F40949F00892F65 /* Keychain in Resources */ = {isa = PBXBuildFile; fileRef = 04D012361F40949F00892F65 /* Keychain */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,16 +154,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0414731F1F4E1C4300757B93 /* AuthClSrvInteg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthClSrvInteg.swift; sourceTree = "<group>"; };
+		041473201F4E1C4300757B93 /* Authorization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
+		041473211F4E1C4300757B93 /* ClSrvIntegBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClSrvIntegBase.swift; sourceTree = "<group>"; };
+		041473221F4E1C4300757B93 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0414732B1F4E1FBD00757B93 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
+		0414732C1F4E1FBD00757B93 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		04D011D61F408D1300892F65 /* LifeLevel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeLevel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D011D91F408D1300892F65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		04D011DB1F408D1300892F65 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		04D011DE1F408D1300892F65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04D011E01F408D1300892F65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04D011E31F408D1300892F65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04D011E51F408D1300892F65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04D011EB1F408EFE00892F65 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		04D012121F40928A00892F65 /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = SwiftyJSON/SwiftyJSON.xcodeproj; sourceTree = "<group>"; };
-		04D012361F40949F00892F65 /* Keychain */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Keychain; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +183,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041473271F4E1C5500757B93 /* Integration */ = {
+			isa = PBXGroup;
+			children = (
+				0414731F1F4E1C4300757B93 /* AuthClSrvInteg.swift */,
+				041473211F4E1C4300757B93 /* ClSrvIntegBase.swift */,
+			);
+			name = Integration;
+			sourceTree = "<group>";
+		};
+		041473281F4E1C6E00757B93 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				041473221F4E1C4300757B93 /* ViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		041473291F4E1C7700757B93 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				041473201F4E1C4300757B93 /* Authorization.swift */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		0414732A1F4E1C8700757B93 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		0414732F1F4E1FC200757B93 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				0414732B1F4E1FBD00757B93 /* KeychainItemAccessibility.swift */,
+				0414732C1F4E1FBD00757B93 /* KeychainWrapper.swift */,
+			);
+			name = Keychain;
+			sourceTree = "<group>";
+		};
 		04D011CD1F408D1300892F65 = {
 			isa = PBXGroup;
 			children = (
@@ -196,9 +245,12 @@
 		04D011D81F408D1300892F65 /* LifeLevel */ = {
 			isa = PBXGroup;
 			children = (
-				04D012361F40949F00892F65 /* Keychain */,
+				0414732F1F4E1FC200757B93 /* Keychain */,
+				0414732A1F4E1C8700757B93 /* Utils */,
+				041473271F4E1C5500757B93 /* Integration */,
+				041473291F4E1C7700757B93 /* Manager */,
+				041473281F4E1C6E00757B93 /* View */,
 				04D011D91F408D1300892F65 /* AppDelegate.swift */,
-				04D011DB1F408D1300892F65 /* ViewController.swift */,
 				04D011DD1F408D1300892F65 /* Main.storyboard */,
 				04D011E01F408D1300892F65 /* Assets.xcassets */,
 				04D011E21F408D1300892F65 /* LaunchScreen.storyboard */,
@@ -408,7 +460,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04D012371F40949F00892F65 /* Keychain in Resources */,
 				04D011E41F408D1300892F65 /* LaunchScreen.storyboard in Resources */,
 				04D011E11F408D1300892F65 /* Assets.xcassets in Resources */,
 				04D011DF1F408D1300892F65 /* Main.storyboard in Resources */,
@@ -422,8 +473,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04D011DC1F408D1300892F65 /* ViewController.swift in Sources */,
+				041473261F4E1C4300757B93 /* ViewController.swift in Sources */,
+				041473241F4E1C4300757B93 /* Authorization.swift in Sources */,
+				041473231F4E1C4300757B93 /* AuthClSrvInteg.swift in Sources */,
+				0414732E1F4E1FBD00757B93 /* KeychainWrapper.swift in Sources */,
 				04D011DA1F408D1300892F65 /* AppDelegate.swift in Sources */,
+				041473251F4E1C4300757B93 /* ClSrvIntegBase.swift in Sources */,
+				0414732D1F4E1FBD00757B93 /* KeychainItemAccessibility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

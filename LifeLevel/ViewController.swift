@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordText: UITextField!
     
     @IBAction func loginButton(_ sender: Any) {
+        let auth = Authorization()
+        var result = auth.login(username:"tolgakayar@yahoo.com",password: "Goligo123;")
     }
     
     override func viewDidLoad() {
