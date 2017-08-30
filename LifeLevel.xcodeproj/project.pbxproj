@@ -13,6 +13,7 @@
 		041473261F4E1C4300757B93 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041473221F4E1C4300757B93 /* LoginViewController.swift */; };
 		0414732D1F4E1FBD00757B93 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414732B1F4E1FBD00757B93 /* KeychainItemAccessibility.swift */; };
 		0414732E1F4E1FBD00757B93 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414732C1F4E1FBD00757B93 /* KeychainWrapper.swift */; };
+		041473311F56E66F00757B93 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041473301F56E66F00757B93 /* IntroViewController.swift */; };
 		04D011DA1F408D1300892F65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D011D91F408D1300892F65 /* AppDelegate.swift */; };
 		04D011DF1F408D1300892F65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D011DD1F408D1300892F65 /* Main.storyboard */; };
 		04D011E11F408D1300892F65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D011E01F408D1300892F65 /* Assets.xcassets */; };
@@ -160,6 +161,7 @@
 		041473221F4E1C4300757B93 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0414732B1F4E1FBD00757B93 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
 		0414732C1F4E1FBD00757B93 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		041473301F56E66F00757B93 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		04D011D61F408D1300892F65 /* LifeLevel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeLevel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D011D91F408D1300892F65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04D011DE1F408D1300892F65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				041473221F4E1C4300757B93 /* LoginViewController.swift */,
+				041473301F56E66F00757B93 /* IntroViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				04D011DA1F408D1300892F65 /* AppDelegate.swift in Sources */,
 				041473251F4E1C4300757B93 /* ClSrvIntegBase.swift in Sources */,
 				0414732D1F4E1FBD00757B93 /* KeychainItemAccessibility.swift in Sources */,
+				041473311F56E66F00757B93 /* IntroViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,7 +13,7 @@
         <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="LifeLevel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="LifeLevel" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -79,6 +79,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="Rdc-kX-kch"/>
                     <connections>
+                        <outlet property="loginButton" destination="0aM-0d-vAb" id="bza-8n-XvP"/>
                         <outlet property="passwordText" destination="Y1Z-aH-2in" id="JG7-zl-ZMe"/>
                         <outlet property="usernameText" destination="sCE-PY-zRu" id="N3T-fV-yXb"/>
                     </connections>
@@ -90,7 +91,7 @@
         <!--Life Level Intro-->
         <scene sceneID="0Sb-e4-0e8">
             <objects>
-                <viewController id="67d-Sl-Wye" sceneMemberID="viewController">
+                <viewController id="67d-Sl-Wye" customClass="IntroViewController" customModule="LifeLevel" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="48N-c3-1Vv"/>
                         <viewControllerLayoutGuide type="bottom" id="WDe-aj-L3K"/>
