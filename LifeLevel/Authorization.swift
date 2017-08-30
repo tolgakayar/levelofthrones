@@ -33,10 +33,33 @@ class Authorization
         return true
     }
     
-    func login(username:String,password:String)->Bool
+    func login(username:String,password:String, completion: @escaping (Bool)->Void)
     {
         clSrvIntegBase.loginUser(username:username,password:password)
-        return true
+        {response in
+
+            self.loginInfo = response
+            
+            //Save to Keychain
+            guard KeychainWrapper.standard.set(self.loginInfo.accessToken, forKey: "accessToken") else {
+                return completion(false)
+            }
+            
+            guard KeychainWrapper.standard.set(self.loginInfo.refreshToken, forKey: "refreshToken") else {
+                return completion(false)
+            }
+            
+            guard KeychainWrapper.standard.set(self.loginInfo.username, forKey: "username") else {
+                return completion(false)
+            }
+            
+            guard KeychainWrapper.standard.set(self.loginInfo.userId, forKey: "userId") else {
+                return completion(false)
+            }
+            
+            //print(response)
+            completion(true)
+        }
     }
 }
 
@@ -48,6 +71,7 @@ struct LoginInfo {
     var firstName:String
     var lastName:String
     var lastLoginDate:String
+    var expireDate:String
     
     init()
     {
@@ -58,5 +82,6 @@ struct LoginInfo {
         firstName = ""
         lastName = ""
         lastLoginDate = ""
+        expireDate = ""
     }
 }

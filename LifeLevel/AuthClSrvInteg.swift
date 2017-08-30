@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class AuthClSrvInteg : ClSrvIntegBase
 {
-    func loginUser(username:String,password:String)->Bool
+    func loginUser(username:String,password:String, completion: @escaping (LoginInfo)->Void)
     {
         let headers = [
             "Content-Type": "application/x-www-form-urlencoded"
@@ -30,12 +30,18 @@ class AuthClSrvInteg : ClSrvIntegBase
                 switch response.result {
                 case .success(let value):
                     let json = JSON(value)
-                    var loginInfo:LoginInfo
-                    print("JSON: \(json)")
+                    var loginInfo = LoginInfo()
+                    loginInfo.accessToken = json["access_token"].stringValue
+                    loginInfo.refreshToken = json["refresh_token"].stringValue
+                    loginInfo.username = json["userName"].stringValue
+                    loginInfo.userId = json["userId"].stringValue
+                    completion(loginInfo)
+                    //print("JSON: \(json)")
                 case .failure(let error):
                     print(error)
+                    let loginInfo = LoginInfo()
+                    completion(loginInfo)
                 }
         }
-        return true
     }
 }

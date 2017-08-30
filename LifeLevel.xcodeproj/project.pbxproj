@@ -10,7 +10,7 @@
 		041473231F4E1C4300757B93 /* AuthClSrvInteg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414731F1F4E1C4300757B93 /* AuthClSrvInteg.swift */; };
 		041473241F4E1C4300757B93 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041473201F4E1C4300757B93 /* Authorization.swift */; };
 		041473251F4E1C4300757B93 /* ClSrvIntegBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041473211F4E1C4300757B93 /* ClSrvIntegBase.swift */; };
-		041473261F4E1C4300757B93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041473221F4E1C4300757B93 /* ViewController.swift */; };
+		041473261F4E1C4300757B93 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041473221F4E1C4300757B93 /* LoginViewController.swift */; };
 		0414732D1F4E1FBD00757B93 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414732B1F4E1FBD00757B93 /* KeychainItemAccessibility.swift */; };
 		0414732E1F4E1FBD00757B93 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414732C1F4E1FBD00757B93 /* KeychainWrapper.swift */; };
 		04D011DA1F408D1300892F65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D011D91F408D1300892F65 /* AppDelegate.swift */; };
@@ -157,7 +157,7 @@
 		0414731F1F4E1C4300757B93 /* AuthClSrvInteg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthClSrvInteg.swift; sourceTree = "<group>"; };
 		041473201F4E1C4300757B93 /* Authorization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		041473211F4E1C4300757B93 /* ClSrvIntegBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClSrvIntegBase.swift; sourceTree = "<group>"; };
-		041473221F4E1C4300757B93 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		041473221F4E1C4300757B93 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0414732B1F4E1FBD00757B93 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
 		0414732C1F4E1FBD00757B93 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		04D011D61F408D1300892F65 /* LifeLevel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeLevel.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,7 +195,7 @@
 		041473281F4E1C6E00757B93 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				041473221F4E1C4300757B93 /* ViewController.swift */,
+				041473221F4E1C4300757B93 /* LoginViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -473,7 +473,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				041473261F4E1C4300757B93 /* ViewController.swift in Sources */,
+				041473261F4E1C4300757B93 /* LoginViewController.swift in Sources */,
 				041473241F4E1C4300757B93 /* Authorization.swift in Sources */,
 				041473231F4E1C4300757B93 /* AuthClSrvInteg.swift in Sources */,
 				0414732E1F4E1FBD00757B93 /* KeychainWrapper.swift in Sources */,
