@@ -44,4 +44,34 @@ class AuthClSrvInteg : ClSrvIntegBase
                 }
         }
     }
+    
+    func registerUserConfirmed(email:String,password:String,confirmPassword:String,firstName:String,lastName:String,
+                               completion: @escaping (Bool)->Void)
+    {
+        let headers = [
+            "Content-Type": "application/json"
+        ]
+        
+        let parameters = [
+            "Email": email,
+            "Password": password,
+            "ConfirmPassword": confirmPassword,
+            "FirstName": firstName,
+            "LastName": lastName
+        ]
+        
+        let url = secureTargetUrl + "/api/Account/RegisterConfirmed"
+        
+        Alamofire.request(url, method: .post, parameters: parameters,headers: headers)
+            .responseJSON { response in
+                switch response.result {
+                case .success(_):
+                    completion(true)
+                //print("JSON: \(json)")
+                case .failure(let error):
+                    print(error)
+                    completion(false)
+                }
+        }
+    }
 }

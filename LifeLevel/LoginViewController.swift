@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import FacebookLogin
+import FacebookCore
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate,LoginButtonDelegate {
 
     
     @IBOutlet weak var usernameText: UITextField!
@@ -24,6 +26,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordText.delegate = self
         
         updateSaveButtonState()
+        
+        let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userEvents, .userLikes, .userFriends ])
+        loginButton.center = view.center
+        loginButton.delegate = self
+        
+        view.addSubview(loginButton)
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,8 +41,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     //MARK: Actions
     @IBAction func loginButton(_ sender: Any) {
+        
+        guard let userName = usernameText.text else{
+            return
+        }
+        
+        guard let password = passwordText.text else{
+            return
+        }
+        
         let auth = Authorization()
-        auth.login(username:"tolgakayar@yahoo.com",password: "Goligo123;")
+        auth.login(username:userName,password: password)
         {response in
             print(auth.loginInfo.accessToken)
             //navigate to profile page
@@ -57,6 +74,64 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         updateSaveButtonState()
+    }
+    
+    //MARK: LoginButtonDelegate Delegate Functions
+    func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+        switch result {
+        case .failed(let error):
+            print(error)
+        case .cancelled:
+            print("Cancelled")
+        case .success(let grantedPermissions, let declinedPermissions, let accessToken):
+            print("Logged In")
+            getFBUserInfo()
+            {response in
+                if response.0{
+                    let auth = Authorization()
+                    let password:String = "extFB" + accessToken.userId!
+                    let username:String = password + "@facebook.com";
+                    auth.registerUserConfirmed(email: response.1, password: password, confirmPassword: password, firstName: response.2, lastName: "")
+                    {response in
+                        auth.login(username:username,password: password)
+                        {response in
+                            print(auth.loginInfo.accessToken)
+                            //navigate to profile page
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: LoginButton) {
+        print("Logged Out")
+    }
+    
+    func getFBUserInfo(completion: @escaping (_ returnValue:Bool, _ emailText: String,_ nameText: String)->Void) {
+        let request = GraphRequest(graphPath: "me", parameters: ["fields":"email,name"], accessToken: AccessToken.current, httpMethod: .GET, apiVersion: FacebookCore.GraphAPIVersion.defaultVersion)
+        request.start { (response, result) in
+            switch result {
+            case .success(let value):
+                var email:String=""
+                var name:String=""
+
+                var temp = value.dictionaryValue?["email"]
+                if let nonNil = temp, !(nonNil is NSNull) {
+                    email = String(describing: nonNil)
+                }
+                
+                temp = value.dictionaryValue?["name"]
+                if let nonNil = temp, !(nonNil is NSNull) {
+                    name = String(describing: nonNil)
+                }
+                
+                completion(true,email,name)
+            case .failed(let error):
+                print(error)
+                completion(false,"","")
+            }
+        }
     }
 }
 

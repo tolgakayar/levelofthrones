@@ -61,6 +61,31 @@ class Authorization
             completion(true)
         }
     }
+    
+    func registerUserConfirmed(email:String,password:String,confirmPassword:String,firstName:String,lastName:String,
+                               completion: @escaping (Bool)->Void)
+    {
+        clSrvIntegBase.registerUserConfirmed(email: email, password: password, confirmPassword: confirmPassword,
+                                             firstName: firstName, lastName: lastName)
+        {response in
+            switch response{
+            case true:
+                print("register ok!!!")
+                completion(true)
+            case false:
+                completion(false)
+            }
+        }
+    }
+
+    
+    func logout()
+    {
+        KeychainWrapper.standard.removeObject(forKey: "accessToken")
+        KeychainWrapper.standard.removeObject(forKey: "refreshToken")
+        KeychainWrapper.standard.removeObject(forKey: "username")
+        KeychainWrapper.standard.removeObject(forKey: "userId")
+    }
 }
 
 struct LoginInfo {
