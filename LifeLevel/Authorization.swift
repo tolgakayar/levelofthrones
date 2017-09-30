@@ -26,9 +26,14 @@ class Authorization
         guard let userId = KeychainWrapper.standard.string(forKey: "userId") else {
             return false
         }
+        
+        guard let username = KeychainWrapper.standard.string(forKey: "username")  else {
+            return false
+        }
 
         loginInfo.accessToken = accessToken
         loginInfo.userId = userId
+        loginInfo.username = username
             
         return true
     }

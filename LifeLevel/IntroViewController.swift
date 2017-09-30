@@ -12,16 +12,18 @@ class IntroViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //if let accessToken = AccessToken.current {
-        //    // User is logged in, use 'accessToken' here.
-        //}
+
         // Do any additional setup after loading the view.
         let auth = Authorization()
         if auth.checkState()
         {
             //navigate to main page
             print("you are in!!!")
-            auth.logout()
+            //auth.logout()
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let activitiesViewController = storyBoard.instantiateViewController(withIdentifier: "activitiesViewController") as! ActivitiesTableViewController
+            activitiesViewController.loginInfo = auth.loginInfo
+            self.present(activitiesViewController, animated: true, completion: nil)
         }
         else
         {

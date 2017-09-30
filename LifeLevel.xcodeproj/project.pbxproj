@@ -20,6 +20,9 @@
 		042094DE1F608C3C00FC64FE /* FacebookLogin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 042094B61F608B9200FC64FE /* FacebookLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		042094E11F608C3C00FC64FE /* FacebookShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042094B81F608B9200FC64FE /* FacebookShare.framework */; };
 		042094E21F608C3C00FC64FE /* FacebookShare.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 042094B81F608B9200FC64FE /* FacebookShare.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		048A5C171F798677003BC95B /* ActivitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A5C161F798677003BC95B /* ActivitiesTableViewController.swift */; };
+		048A5C191F7996E8003BC95B /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A5C181F7996E8003BC95B /* ActivityTableViewCell.swift */; };
+		048A5C1B1F7FC851003BC95B /* ActivityClSrvInteg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A5C1A1F7FC851003BC95B /* ActivityClSrvInteg.swift */; };
 		04D011DA1F408D1300892F65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D011D91F408D1300892F65 /* AppDelegate.swift */; };
 		04D011DF1F408D1300892F65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D011DD1F408D1300892F65 /* Main.storyboard */; };
 		04D011E11F408D1300892F65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D011E01F408D1300892F65 /* Assets.xcassets */; };
@@ -214,6 +217,9 @@
 		0414732C1F4E1FBD00757B93 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		041473301F56E66F00757B93 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		0420949D1F608B9100FC64FE /* FacebookSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FacebookSwift.xcodeproj; path = "facebook-sdk-swift/FacebookSwift.xcodeproj"; sourceTree = "<group>"; };
+		048A5C161F798677003BC95B /* ActivitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewController.swift; sourceTree = "<group>"; };
+		048A5C181F7996E8003BC95B /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		048A5C1A1F7FC851003BC95B /* ActivityClSrvInteg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityClSrvInteg.swift; sourceTree = "<group>"; };
 		04D011D61F408D1300892F65 /* LifeLevel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeLevel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D011D91F408D1300892F65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04D011DE1F408D1300892F65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -245,6 +251,7 @@
 			children = (
 				0414731F1F4E1C4300757B93 /* AuthClSrvInteg.swift */,
 				041473211F4E1C4300757B93 /* ClSrvIntegBase.swift */,
+				048A5C1A1F7FC851003BC95B /* ActivityClSrvInteg.swift */,
 			);
 			name = Integration;
 			sourceTree = "<group>";
@@ -254,6 +261,7 @@
 			children = (
 				041473221F4E1C4300757B93 /* LoginViewController.swift */,
 				041473301F56E66F00757B93 /* IntroViewController.swift */,
+				048A5C161F798677003BC95B /* ActivitiesTableViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -302,6 +310,7 @@
 				04D011EB1F408EFE00892F65 /* Alamofire.xcodeproj */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		04D011D71F408D1300892F65 /* Products */ = {
 			isa = PBXGroup;
@@ -324,9 +333,11 @@
 				04D011E01F408D1300892F65 /* Assets.xcassets */,
 				04D011E21F408D1300892F65 /* LaunchScreen.storyboard */,
 				04D011E51F408D1300892F65 /* Info.plist */,
+				048A5C181F7996E8003BC95B /* ActivityTableViewCell.swift */,
 			);
-			path = LifeLevel;
-			sourceTree = "<group>";
+			name = LifeLevel;
+			path = /Users/mac/Desktop/Projects/LifeLevel/LifeLevel;
+			sourceTree = "<absolute>";
 		};
 		04D011EC1F408EFE00892F65 /* Products */ = {
 			isa = PBXGroup;
@@ -394,6 +405,7 @@
 				TargetAttributes = {
 					04D011D51F408D1300892F65 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = P3G43KG64M;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -571,11 +583,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				041473261F4E1C4300757B93 /* LoginViewController.swift in Sources */,
+				048A5C1B1F7FC851003BC95B /* ActivityClSrvInteg.swift in Sources */,
 				041473241F4E1C4300757B93 /* Authorization.swift in Sources */,
+				048A5C191F7996E8003BC95B /* ActivityTableViewCell.swift in Sources */,
 				041473231F4E1C4300757B93 /* AuthClSrvInteg.swift in Sources */,
 				0414732E1F4E1FBD00757B93 /* KeychainWrapper.swift in Sources */,
 				04D011DA1F408D1300892F65 /* AppDelegate.swift in Sources */,
 				041473251F4E1C4300757B93 /* ClSrvIntegBase.swift in Sources */,
+				048A5C171F798677003BC95B /* ActivitiesTableViewController.swift in Sources */,
 				0414732D1F4E1FBD00757B93 /* KeychainItemAccessibility.swift in Sources */,
 				041473311F56E66F00757B93 /* IntroViewController.swift in Sources */,
 			);
@@ -731,10 +746,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P3G43KG64M;
 				INFOPLIST_FILE = LifeLevel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tolgakayar.LifeLevel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -744,10 +764,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P3G43KG64M;
 				INFOPLIST_FILE = LifeLevel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tolgakayar.LifeLevel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
