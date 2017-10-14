@@ -10,11 +10,20 @@ import UIKit
 
 class ActivitiesTableViewController: UITableViewController {
     
+    //MARK: Properties
+    var activities = [Activity]()
     var loginInfo = LoginInfo()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let clSrvIntegBase = ActivityClSrvInteg()
+        clSrvIntegBase.accessToken = loginInfo.accessToken
+        clSrvIntegBase.getUserActivities(userId: loginInfo.userId, mainUserId: loginInfo.userId, fromActivityId: 100)
+        {response in
+            //load activities to view
+            
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -31,15 +40,14 @@ class ActivitiesTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return activities.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
@@ -47,7 +55,6 @@ class ActivitiesTableViewController: UITableViewController {
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

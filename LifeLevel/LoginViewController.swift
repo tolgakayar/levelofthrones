@@ -55,6 +55,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate,LoginButtonDele
         {response in
             print(auth.loginInfo.accessToken)
             //navigate to profile page
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let activitiesViewController = storyBoard.instantiateViewController(withIdentifier: "activitiesViewController") as! ActivitiesTableViewController
+            activitiesViewController.loginInfo = auth.loginInfo
+            self.present(activitiesViewController, animated: true, completion: nil)
         }
     }
     
@@ -69,7 +73,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate,LoginButtonDele
     //MARK: UITextFieldDelegate
     func textFieldDidBeginEditing(_ textField: UITextField) {
         // Disable the Save button while editing.
-        loginButton.isEnabled = false
+        //loginButton.isEnabled = false
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -97,6 +101,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate,LoginButtonDele
                         {response in
                             print(auth.loginInfo.accessToken)
                             //navigate to profile page
+                            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                            let activitiesViewController = storyBoard.instantiateViewController(withIdentifier: "activitiesViewController") as! ActivitiesTableViewController
+                            activitiesViewController.loginInfo = auth.loginInfo
+                            self.present(activitiesViewController, animated: true, completion: nil)
                         }
                     }
                 }

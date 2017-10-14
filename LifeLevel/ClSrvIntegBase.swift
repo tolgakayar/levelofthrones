@@ -10,7 +10,7 @@ class ClSrvIntegBase
 {
     let targetUrl = "http://www.lifelvls.com"
     let secureTargetUrl = "https://www.lifelvls.com"
-    let accessToken = ""
+    var accessToken = ""
      
     init()
     {
