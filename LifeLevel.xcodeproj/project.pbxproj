@@ -23,6 +23,7 @@
 		048A5C171F798677003BC95B /* ActivitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A5C161F798677003BC95B /* ActivitiesTableViewController.swift */; };
 		048A5C191F7996E8003BC95B /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A5C181F7996E8003BC95B /* ActivityTableViewCell.swift */; };
 		048A5C1B1F7FC851003BC95B /* ActivityClSrvInteg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A5C1A1F7FC851003BC95B /* ActivityClSrvInteg.swift */; };
+		048A5C211F924B2E003BC95B /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A5C201F924B2D003BC95B /* Activity.swift */; };
 		04D011DA1F408D1300892F65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D011D91F408D1300892F65 /* AppDelegate.swift */; };
 		04D011DF1F408D1300892F65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D011DD1F408D1300892F65 /* Main.storyboard */; };
 		04D011E11F408D1300892F65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D011E01F408D1300892F65 /* Assets.xcassets */; };
@@ -220,6 +221,7 @@
 		048A5C161F798677003BC95B /* ActivitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewController.swift; sourceTree = "<group>"; };
 		048A5C181F7996E8003BC95B /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		048A5C1A1F7FC851003BC95B /* ActivityClSrvInteg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityClSrvInteg.swift; sourceTree = "<group>"; };
+		048A5C201F924B2D003BC95B /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		04D011D61F408D1300892F65 /* LifeLevel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeLevel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D011D91F408D1300892F65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04D011DE1F408D1300892F65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -300,6 +302,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		048A5C1E1F923FDC003BC95B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				048A5C181F7996E8003BC95B /* ActivityTableViewCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		048A5C1F1F924AFD003BC95B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				048A5C201F924B2D003BC95B /* Activity.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		04D011CD1F408D1300892F65 = {
 			isa = PBXGroup;
 			children = (
@@ -323,17 +341,18 @@
 		04D011D81F408D1300892F65 /* LifeLevel */ = {
 			isa = PBXGroup;
 			children = (
+				048A5C1F1F924AFD003BC95B /* Data */,
+				041473291F4E1C7700757B93 /* Manager */,
+				041473271F4E1C5500757B93 /* Integration */,
+				041473281F4E1C6E00757B93 /* View */,
+				048A5C1E1F923FDC003BC95B /* Cell */,
 				0414732F1F4E1FC200757B93 /* Keychain */,
 				0414732A1F4E1C8700757B93 /* Utils */,
-				041473271F4E1C5500757B93 /* Integration */,
-				041473291F4E1C7700757B93 /* Manager */,
-				041473281F4E1C6E00757B93 /* View */,
 				04D011D91F408D1300892F65 /* AppDelegate.swift */,
 				04D011DD1F408D1300892F65 /* Main.storyboard */,
 				04D011E01F408D1300892F65 /* Assets.xcassets */,
 				04D011E21F408D1300892F65 /* LaunchScreen.storyboard */,
 				04D011E51F408D1300892F65 /* Info.plist */,
-				048A5C181F7996E8003BC95B /* ActivityTableViewCell.swift */,
 			);
 			name = LifeLevel;
 			path = /Users/mac/Desktop/Projects/LifeLevel/LifeLevel;
@@ -588,6 +607,7 @@
 				048A5C191F7996E8003BC95B /* ActivityTableViewCell.swift in Sources */,
 				041473231F4E1C4300757B93 /* AuthClSrvInteg.swift in Sources */,
 				0414732E1F4E1FBD00757B93 /* KeychainWrapper.swift in Sources */,
+				048A5C211F924B2E003BC95B /* Activity.swift in Sources */,
 				04D011DA1F408D1300892F65 /* AppDelegate.swift in Sources */,
 				041473251F4E1C4300757B93 /* ClSrvIntegBase.swift in Sources */,
 				048A5C171F798677003BC95B /* ActivitiesTableViewController.swift in Sources */,
