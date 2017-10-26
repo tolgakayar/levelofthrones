@@ -17,12 +17,19 @@ class ActivitiesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        self.tableView.rowHeight = 140.0
+        
         let clSrvIntegBase = ActivityClSrvInteg()
         clSrvIntegBase.accessToken = loginInfo.accessToken
         clSrvIntegBase.getUserActivities(userId: loginInfo.userId, mainUserId: loginInfo.userId, fromActivityId: 100)
         {response in
             //load activities to view
+            self.activities = response
             
+            self.tableView.reloadData()
         }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -49,9 +56,32 @@ class ActivitiesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        let cellIdentifier = "ActivityTableViewCell"
+        
+        //let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ActivityTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of ActivityTableViewCell.")
+        }
 
-        // Configure the cell...
+        let activity = activities[indexPath.row]
+        
+        if !activity.mainPhoto.isEmpty
+        {
+            let tempPhoto = UIImage(named: activity.mainPhoto)
+            cell.activityImageView.image = tempPhoto
+        }
+        else
+        {
+            cell.activityImageView.image = UIImage(named:"Activity1")
+        }
+        
+        cell.activityTypeLabel.text = activity.activity
+        cell.dateLabel.text = activity.date
+        cell.decriptionLabel.text = activity.description
+        cell.likesLabel.text = String(activity.totalLikeCount) + " likes"
+        cell.userLabel.text = self.loginInfo.username
 
         return cell
     }

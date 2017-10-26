@@ -22,7 +22,7 @@ class Activity {
     init?(username: String, description: String, activity: String, mainPhoto:String, date:String, id:Int,activityId:Int,totalLikeCount:Int) {
         
         // Initialization should fail if there is no name or if the rating is negative.
-        if username.isEmpty || activity.isEmpty || id < 0  {
+        if activity.isEmpty || id < 0  {
             return nil
         }
         

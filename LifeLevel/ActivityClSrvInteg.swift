@@ -31,9 +31,23 @@ class ActivityClSrvInteg : ClSrvIntegBase
                     print("JSON: \(json)")
                     var activities = [Activity]()
                     for subJson in json.arrayValue {
-                        let desc = subJson["activityType"].string
-                        // do something
-                        print("desc:  \(desc)")
+                        let activityType = subJson["activityType"].string
+                        let likeCount = subJson["TotalLikeCount"].int
+                        let description = subJson["userActivities"]["Description"].string
+                        let mainPhoto = subJson["userActivities"]["MainPhoto"].string
+                        let activityId = subJson["userActivities"]["ActivityId"].int
+                        let id = subJson["userActivities"]["Id"].int
+                        let activityDate = subJson["userActivities"]["ActivityDate"].string
+
+                        //var tempPhoto = "test-image.jpeg"
+                        var tempPhoto = ""
+                        if mainPhoto != nil{
+                            tempPhoto = mainPhoto!
+                        }
+                        
+                        let activity = Activity(username: "", description: description!, activity: activityType!, mainPhoto: tempPhoto, date: activityDate!, id: id!, activityId: activityId!, totalLikeCount: likeCount!)
+                        
+                        activities.append(activity!)
                     }
                     
                     completion(activities)
