@@ -20,10 +20,18 @@ class IntroViewController: UIViewController {
             //navigate to main page
             print("you are in!!!")
             //auth.logout()
+            
+            //test another storyboard
+            let testStoryBoard: UIStoryboard = UIStoryboard(name: "Test", bundle: nil)
+            let testViewController = testStoryBoard.instantiateViewController(withIdentifier: "testViewController") as! testViewController
+            self.present(testViewController, animated: true, completion: nil)
+            
+            /*
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let activitiesViewController = storyBoard.instantiateViewController(withIdentifier: "activitiesViewController") as! ActivitiesTableViewController
             activitiesViewController.loginInfo = auth.loginInfo
             self.present(activitiesViewController, animated: true, completion: nil)
+            */
         }
         else
         {

@@ -13,6 +13,9 @@ class ActivitiesTableViewController: UITableViewController {
     //MARK: Properties
     var activities = [Activity]()
     var loginInfo = LoginInfo()
+    var loadingData:Bool = false
+    var fromActivityId = 9999
+    var isMore:Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +25,29 @@ class ActivitiesTableViewController: UITableViewController {
         
         self.tableView.rowHeight = 140.0
         
+        loadingData = true
+        
         let clSrvIntegBase = ActivityClSrvInteg()
         clSrvIntegBase.accessToken = loginInfo.accessToken
-        clSrvIntegBase.getUserActivities(userId: loginInfo.userId, mainUserId: loginInfo.userId, fromActivityId: 100)
+        clSrvIntegBase.getUserActivities(userId: loginInfo.userId, mainUserId: loginInfo.userId, fromActivityId: fromActivityId)
         {response in
             //load activities to view
             self.activities = response
             
+            CATransaction.begin()
+            CATransaction.setCompletionBlock({
+                print("reload completed")
+                //Your completion code here
+                self.loadingData = false
+            })
+            print("reloading")
             self.tableView.reloadData()
+            CATransaction.commit()
+            //self.tableView.reloadData()
+            
+            print("loading!!!")
+            
+            
         }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -86,6 +104,52 @@ class ActivitiesTableViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastElement = activities.count - 1
+        fromActivityId = activities[lastElement].id
+        
+        print("activity from:")
+        print(fromActivityId)
+        print(indexPath.row)
+        print(loadingData)
+        
+        if isMore && !loadingData && indexPath.row == lastElement {
+            //indicator.startAnimating()
+            loadingData = true
+            loadMore()
+            print("load more")
+        }
+    }
+    
+    func loadMore()
+    {
+        let clSrvIntegBase = ActivityClSrvInteg()
+        clSrvIntegBase.accessToken = loginInfo.accessToken
+        clSrvIntegBase.getUserActivities(userId: loginInfo.userId, mainUserId: loginInfo.userId, fromActivityId: fromActivityId)
+        {response in
+            //load activities to view
+            if(response.count==0)
+            {
+                self.isMore = false
+            }
+            else
+            {
+                self.activities += response
+                
+                print("loading more!!!")
+                CATransaction.begin()
+                CATransaction.setCompletionBlock({
+                    print("reload completed")
+                    //Your completion code here
+                    self.loadingData = false
+                })
+                print("reloading")
+                self.tableView.reloadData()
+                CATransaction.commit()
+            }
+        }
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

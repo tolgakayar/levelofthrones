@@ -20,6 +20,8 @@
 		042094DE1F608C3C00FC64FE /* FacebookLogin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 042094B61F608B9200FC64FE /* FacebookLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		042094E11F608C3C00FC64FE /* FacebookShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042094B81F608B9200FC64FE /* FacebookShare.framework */; };
 		042094E21F608C3C00FC64FE /* FacebookShare.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 042094B81F608B9200FC64FE /* FacebookShare.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		045BCB641FA7B690005C325E /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045BCB631FA7B690005C325E /* Test.storyboard */; };
+		045BCB741FA7B7B8005C325E /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BCB731FA7B7B8005C325E /* testViewController.swift */; };
 		048A5C171F798677003BC95B /* ActivitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A5C161F798677003BC95B /* ActivitiesTableViewController.swift */; };
 		048A5C191F7996E8003BC95B /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A5C181F7996E8003BC95B /* ActivityTableViewCell.swift */; };
 		048A5C1B1F7FC851003BC95B /* ActivityClSrvInteg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A5C1A1F7FC851003BC95B /* ActivityClSrvInteg.swift */; };
@@ -218,6 +220,8 @@
 		0414732C1F4E1FBD00757B93 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		041473301F56E66F00757B93 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		0420949D1F608B9100FC64FE /* FacebookSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FacebookSwift.xcodeproj; path = "facebook-sdk-swift/FacebookSwift.xcodeproj"; sourceTree = "<group>"; };
+		045BCB631FA7B690005C325E /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
+		045BCB731FA7B7B8005C325E /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		048A5C161F798677003BC95B /* ActivitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewController.swift; sourceTree = "<group>"; };
 		048A5C181F7996E8003BC95B /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		048A5C1A1F7FC851003BC95B /* ActivityClSrvInteg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityClSrvInteg.swift; sourceTree = "<group>"; };
@@ -350,6 +354,8 @@
 				0414732A1F4E1C8700757B93 /* Utils */,
 				04D011D91F408D1300892F65 /* AppDelegate.swift */,
 				04D011DD1F408D1300892F65 /* Main.storyboard */,
+				045BCB631FA7B690005C325E /* Test.storyboard */,
+				045BCB731FA7B7B8005C325E /* testViewController.swift */,
 				04D011E01F408D1300892F65 /* Assets.xcassets */,
 				04D011E21F408D1300892F65 /* LaunchScreen.storyboard */,
 				04D011E51F408D1300892F65 /* Info.plist */,
@@ -589,6 +595,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04D011E41F408D1300892F65 /* LaunchScreen.storyboard in Resources */,
+				045BCB641FA7B690005C325E /* Test.storyboard in Resources */,
 				04D011E11F408D1300892F65 /* Assets.xcassets in Resources */,
 				04D011DF1F408D1300892F65 /* Main.storyboard in Resources */,
 			);
@@ -611,6 +618,7 @@
 				04D011DA1F408D1300892F65 /* AppDelegate.swift in Sources */,
 				041473251F4E1C4300757B93 /* ClSrvIntegBase.swift in Sources */,
 				048A5C171F798677003BC95B /* ActivitiesTableViewController.swift in Sources */,
+				045BCB741FA7B7B8005C325E /* testViewController.swift in Sources */,
 				0414732D1F4E1FBD00757B93 /* KeychainItemAccessibility.swift in Sources */,
 				041473311F56E66F00757B93 /* IntroViewController.swift in Sources */,
 			);
